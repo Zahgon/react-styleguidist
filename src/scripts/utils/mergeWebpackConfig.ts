@@ -27,7 +27,7 @@ const merge = mergeBase({
 	customizeArray: mergeBase.unique(
 		'plugins',
 		IGNORE_PLUGINS,
-		(plugin: WebpackPluginInstance) => plugin.constructor && plugin.constructor.name
+		(plugin: WebpackPluginInstance) => { throw new Error("STUB"); }
 	),
 });
 
@@ -50,7 +50,5 @@ export default function mergeWebpackConfig(
 	userConfig: MetaConfig,
 	env = 'production'
 ) {
-	const userConfigObject = isFunction(userConfig) ? userConfig(env) : userConfig;
-	const safeUserConfig = omit(userConfigObject, IGNORE_SECTIONS.concat(IGNORE_SECTIONS_ENV[env]));
-	return merge(baseConfig, safeUserConfig);
+    throw new Error("STUB");
 }

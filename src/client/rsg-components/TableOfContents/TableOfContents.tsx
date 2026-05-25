@@ -29,35 +29,8 @@ export default class TableOfContents extends Component<TableOfContentsProps> {
 
 		let childrenContainSelected = false;
 		const processedItems = sections.map((section) => {
-			const children = [...(section.sections || []), ...(section.components || [])];
-			const sectionDepth = section.sectionDepth || 0;
-			const childHashPath =
-				sectionDepth === 0 && useHashId
-					? hashPath
-					: [...hashPath, section.name ? section.name : '-'];
-
-			const { content, containsSelected } =
-				children.length > 0
-					? this.renderLevel(children, useRouterLinks, childHashPath, sectionDepth === 0)
-					: { content: undefined, containsSelected: false };
-
-			const selected =
-				(!useRouterLinks && section.href ? getHash(section.href) : section.href) === windowHash;
-
-			if (containsSelected || selected) {
-				childrenContainSelected = true;
-			}
-
-			return {
-				...section,
-				heading: !!section.name && children.length > 0,
-				content,
-				selected,
-				shouldOpenInNewTab: !!section.external && !!section.externalLink,
-				initialOpen: this.props.tocMode !== 'collapse' || containsSelected || section.expand,
-				forcedOpen: !!this.state.searchTerm.length,
-			};
-		});
+            throw new Error("STUB");
+        });
 		return {
 			content: <ComponentsList items={processedItems} />,
 			containsSelected: childrenContainSelected,
@@ -87,7 +60,7 @@ export default class TableOfContents extends Component<TableOfContentsProps> {
 	}
 
 	public render() {
-		const handleSearchTermChange = (searchTerm: string) => this.setState({ searchTerm });
+		const handleSearchTermChange = (searchTerm: string) => { throw new Error("STUB"); };
 		return (
 			<TableOfContentsRenderer
 				searchTerm={this.state.searchTerm}

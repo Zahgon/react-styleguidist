@@ -52,39 +52,8 @@ export default function getRouteData(
 			// each hashArray's element represent each section name with the same deep
 			// so it should be filter each section to trying to find each one of array on the same deep
 			hashArray.forEach((hashName, index) => {
-				// Filter the requested component if required but only on the first depth
-				// so in the next time of iteration, it will be trying to filter only on the second depth and so on
-				filteredSections = filterComponentsInSectionsByExactName(sections, hashName, !!isolate);
-
-				// If filteredSections exists, its because is an array of an component
-				// else it is an array of sections and depending his sectionDepth
-				// his children could be filtered or not
-				if (filteredSections.length) {
-					sections = filteredSections;
-				} else {
-					let section = findSection(sections, hashName);
-					if (section) {
-						// Only if hashName is the last of hashArray his children should be filtered
-						// because else there are possibilities to keep on filtering to try find the next section
-						const isLastHashName = !hashArray || !hashArray[index + 1];
-
-						// When sectionDepth is bigger than 0, their children should be filtered
-						const shouldFilterTheirChildren = (section.sectionDepth || 0) > 0 && isLastHashName;
-
-						if (shouldFilterTheirChildren) {
-							// Filter his sections and components
-							section = {
-								...section,
-								sections: [],
-								components: [],
-							};
-						}
-						sections = [section];
-					} else {
-						sections = [];
-					}
-				}
-			});
+                throw new Error("STUB");
+            });
 			if (!sections.length) {
 				displayMode = DisplayModes.notFound;
 			}

@@ -6,37 +6,7 @@ import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import { useStyleGuideContext } from 'rsg-components/Context';
 import * as Rsg from '../../../typings';
 
-const styles = ({ color, fontFamily, fontSize, space, mq }: Rsg.Theme) => ({
-	list: {
-		margin: 0,
-		paddingLeft: space[2],
-	},
-	item: {
-		color: color.base,
-		display: 'block',
-		margin: [[space[1], 0, space[1], 0]],
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.base,
-		listStyle: 'none',
-		overflow: 'hidden',
-		textOverflow: 'ellipsis',
-	},
-	isChild: {
-		[mq.small]: {
-			display: 'inline-block',
-			margin: [[0, space[1], 0, 0]],
-		},
-	},
-	heading: {
-		color: color.base,
-		marginTop: space[1],
-		fontFamily: fontFamily.base,
-		fontWeight: 'bold',
-	},
-	isSelected: {
-		fontWeight: 'bold',
-	},
-});
+const styles = ({ color, fontFamily, fontSize, space, mq }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface ComponentsListRendererProps extends JssInjectedProps {
 	items: Rsg.TOCItem[];
@@ -53,44 +23,14 @@ const ComponentsListSectionRenderer: React.FunctionComponent<Rsg.TOCItem & JssIn
 	initialOpen,
 	forcedOpen,
 }) => {
-	const {
-		config: { tocMode },
-	} = useStyleGuideContext();
-
-	const [open, setOpen] = tocMode !== 'collapse' ? [true, () => {}] : React.useState(!!initialOpen);
-	return (
-		<li
-			className={cx(classes.item, {
-				[classes.isChild]: !content && !shouldOpenInNewTab,
-				[classes.isSelected]: selected,
-			})}
-			key={href}
-		>
-			<Link
-				className={cx(heading && classes.heading)}
-				href={href}
-				onClick={() => setOpen(!open)}
-				target={shouldOpenInNewTab ? '_blank' : undefined}
-				data-testid="rsg-toc-link"
-			>
-				{visibleName}
-			</Link>
-			{open || forcedOpen ? content : null}
-		</li>
-	);
+    throw new Error("STUB");
 };
 
 export const ComponentsListRenderer: React.FunctionComponent<ComponentsListRendererProps> = ({
 	classes,
 	items,
 }) => {
-	return (
-		<ul className={classes.list}>
-			{items.map((item) => (
-				<ComponentsListSectionRenderer key={item.slug} classes={classes} {...item} />
-			))}
-		</ul>
-	);
+    throw new Error("STUB");
 };
 
 ComponentsListRenderer.propTypes = {

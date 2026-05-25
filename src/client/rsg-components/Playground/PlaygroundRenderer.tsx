@@ -4,41 +4,7 @@ import cx from 'clsx';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space, color, borderRadius }: Rsg.Theme) => ({
-	root: {
-		marginBottom: space[4],
-	},
-	preview: {
-		padding: space[2],
-		border: [[1, color.border, 'solid']],
-		borderRadius,
-		// the next 2 lines are required to contain floated components
-		width: '100%',
-		display: 'inline-block',
-	},
-	controls: {
-		display: 'flex',
-		alignItems: 'center',
-		marginBottom: space[1],
-	},
-	toolbar: {
-		marginLeft: 'auto',
-	},
-	tab: {}, // expose className to allow using it in 'styles' settings
-	padded: {
-		// add padding between each example element rendered
-		'& > *': {
-			isolate: false,
-			marginLeft: -space[1],
-			marginRight: -space[1],
-			'& > *': {
-				isolate: false,
-				marginRight: space[1],
-				marginLeft: space[1],
-			},
-		},
-	},
-});
+export const styles = ({ space, color, borderRadius }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface PlaygroundRendererProps extends JssInjectedProps {
 	exampleIndex: number;
@@ -63,20 +29,7 @@ export const PlaygroundRenderer: React.FunctionComponent<PlaygroundRendererProps
 	tabBody,
 	toolbar,
 }) => {
-	const { className, ...props } = previewProps;
-	const previewClasses = cx(classes.preview, className, { [classes.padded]: padded });
-	return (
-		<div className={classes.root} data-testid={`${name}-example-${exampleIndex}`}>
-			<div className={previewClasses} {...props} data-preview={name} data-testid="preview-wrapper">
-				{preview}
-			</div>
-			<div className={classes.controls}>
-				<div className={classes.tabs}>{tabButtons}</div>
-				<div className={classes.toolbar}>{toolbar}</div>
-			</div>
-			<div className={classes.tab}>{tabBody}</div>
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 PlaygroundRenderer.propTypes = {

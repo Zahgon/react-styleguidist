@@ -16,22 +16,7 @@ export default function filterComponentsInSectionsByExactName(
 ): Rsg.Section[] {
 	const filteredSections: Rsg.Section[] = [];
 	sections.forEach(section => {
-		if (section.components) {
-			const filteredComponents = filterComponentsByExactName(section.components, name);
-			if (filteredComponents.length) {
-				filteredSections.push({
-					slug: section.slug,
-					exampleMode: section.exampleMode,
-					usageMode: section.usageMode,
-					components: filteredComponents,
-				});
-			}
-		}
-		if (section.sections && recursive) {
-			filteredSections.push(
-				...filterComponentsInSectionsByExactName(section.sections, name, recursive)
-			);
-		}
-	});
+        throw new Error("STUB");
+    });
 	return filteredSections;
 }

@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 
-const styles = () => ({
-	// Just default jss-isolate rules
-	root: {},
-});
+const styles = () => { throw new Error("STUB"); };
 
 interface ExamplesRendererProps extends JssInjectedProps {
 	children?: React.ReactNode;
@@ -17,11 +14,7 @@ export const ExamplesRenderer: React.FunctionComponent<ExamplesRendererProps> = 
 	name,
 	children,
 }) => {
-	return (
-		<article className={classes.root} data-testid={`${name}-examples`}>
-			{children}
-		</article>
-	);
+    throw new Error("STUB");
 };
 
 ExamplesRenderer.propTypes = {

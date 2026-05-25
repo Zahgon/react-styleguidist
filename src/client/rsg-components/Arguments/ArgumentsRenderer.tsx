@@ -4,15 +4,7 @@ import Argument, { ArgumentProps } from 'rsg-components/Argument';
 import Heading from 'rsg-components/Heading';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space }: Rsg.Theme) => ({
-	root: {
-		marginBottom: space[2],
-		fontSize: 'inherit',
-	},
-	headingWrapper: {
-		marginBottom: space[0],
-	},
-});
+export const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface ArgumentsProps extends JssInjectedProps {
 	heading?: boolean;
@@ -24,22 +16,7 @@ export const ArgumentsRenderer: React.FunctionComponent<ArgumentsProps> = ({
 	args,
 	heading,
 }) => {
-	if (args.length === 0) {
-		return null;
-	}
-
-	return (
-		<div className={classes.root}>
-			{heading && (
-				<div className={classes.headingWrapper}>
-					<Heading level={5}>Arguments</Heading>
-				</div>
-			)}
-			{args.map((arg) => (
-				<Argument key={arg.name} {...arg} />
-			))}
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 export default Styled<ArgumentsProps>(styles)(ArgumentsRenderer);

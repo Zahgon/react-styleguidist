@@ -3,16 +3,7 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space, color, fontFamily, fontSize }: Rsg.Theme) => ({
-	para: {
-		marginTop: 0,
-		marginBottom: space[2],
-		color: color.base,
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.text,
-		lineHeight: 1.5,
-	},
-});
+export const styles = ({ space, color, fontFamily, fontSize }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface ParaProps extends JssInjectedProps {
 	semantic?: 'p';
@@ -24,9 +15,7 @@ export const ParaRenderer: React.FunctionComponent<ParaProps> = ({
 	semantic,
 	children,
 }) => {
-	const Tag = semantic || 'div';
-
-	return <Tag className={classes.para}>{children}</Tag>;
+    throw new Error("STUB");
 };
 
 ParaRenderer.propTypes = {

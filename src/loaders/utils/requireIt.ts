@@ -12,8 +12,8 @@ export default function requireIt(filepath: string): Rsg.RequireItResult {
 	Object.defineProperty(obj, 'toAST', {
 		enumerable: false,
 		value(): ASTNode {
-			return b.callExpression(b.identifier('require'), [b.literal(filepath)]);
-		},
+            throw new Error("STUB");
+        },
 	});
 	return obj as Rsg.RequireItResult;
 }

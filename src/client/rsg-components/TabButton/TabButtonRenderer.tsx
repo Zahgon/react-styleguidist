@@ -10,36 +10,7 @@ export const styles = ({
 	fontFamily,
 	fontSize,
 	buttonTextTransform,
-}: Rsg.Theme): Styles => ({
-	button: {
-		padding: [[space[1], 0]],
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.base,
-		color: color.light,
-		background: 'transparent',
-		textTransform: buttonTextTransform,
-		transition: 'color 750ms ease-out',
-		border: 'none',
-		cursor: 'pointer',
-		'&:hover, &:focus': {
-			isolate: false,
-			outline: 0,
-			color: color.linkHover,
-			transition: 'color 150ms ease-in',
-		},
-		'&:focus:not($isActive)': {
-			isolate: false,
-			outline: [[1, 'dotted', color.linkHover]],
-		},
-		'& + &': {
-			isolate: false,
-			marginLeft: space[1],
-		},
-	},
-	isActive: {
-		borderBottom: [[2, color.linkHover, 'solid']],
-	},
-});
+}: Rsg.Theme): Styles => { throw new Error("STUB"); };
 
 interface TabButtonProps extends JssInjectedProps {
 	className?: string;
@@ -57,21 +28,7 @@ export const TabButtonRenderer: React.FunctionComponent<TabButtonProps> = ({
 	active = false,
 	children,
 }) => {
-	const classNames = cx(classes.button, className, {
-		[classes.isActive]: active,
-	});
-
-	return (
-		<button
-			type="button"
-			name={name}
-			className={classNames}
-			onClick={onClick}
-			aria-pressed={active}
-		>
-			{children}
-		</button>
-	);
+    throw new Error("STUB");
 };
 
 export default Styled<TabButtonProps>(styles)(TabButtonRenderer);

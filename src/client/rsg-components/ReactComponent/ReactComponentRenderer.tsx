@@ -4,29 +4,7 @@ import Pathline from 'rsg-components/Pathline';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ color, fontSize, space }: Rsg.Theme) => ({
-	root: {
-		marginBottom: space[6],
-	},
-	header: {
-		marginBottom: space[3],
-	},
-	tabs: {
-		marginBottom: space[3],
-	},
-	tabButtons: {
-		marginBottom: space[1],
-	},
-	tabBody: {
-		overflowX: 'auto',
-		maxWidth: '100%',
-		WebkitOverflowScrolling: 'touch',
-	},
-	docs: {
-		color: color.base,
-		fontSize: fontSize.text,
-	},
-});
+const styles = ({ color, fontSize, space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface ReactComponentRendererProps extends JssInjectedProps {
 	name: string;
@@ -53,27 +31,7 @@ export const ReactComponentRenderer: React.FunctionComponent<ReactComponentRende
 	tabButtons,
 	tabBody,
 }) => {
-	return (
-		<div className={classes.root} data-testid={`${name}-container`}>
-			<header className={classes.header}>
-				{heading}
-				{pathLine && <Pathline>{pathLine}</Pathline>}
-			</header>
-			{(description || docs) && (
-				<div className={classes.docs}>
-					{description}
-					{docs}
-				</div>
-			)}
-			{tabButtons && (
-				<div className={classes.tabs}>
-					<div className={classes.tabButtons}>{tabButtons}</div>
-					<div className={classes.tabBody}>{tabBody}</div>
-				</div>
-			)}
-			{examples}
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 ReactComponentRenderer.propTypes = {

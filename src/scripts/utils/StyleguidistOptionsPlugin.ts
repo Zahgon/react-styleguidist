@@ -19,24 +19,18 @@ export default class StyleguidistOptionsPlugin implements WebpackPluginInstance 
 		context: Rsg.StyleguidistLoaderContext,
 		module: LoaderContext<Rsg.SanitizedStyleguidistConfig>
 	) => {
-		if (!module.resource) {
-			return;
-		}
-		context._styleguidist = this.options;
-	};
+        throw new Error("STUB");
+    };
 
 	/**
 	 *
 	 * @param compil Compilation
 	 */
 	private plugin = (compil: Compilation) => {
-		webpack.NormalModule.getCompilationHooks(compil).loader.tap(
-			'StyleguidistOptionsPlugin',
-			this.pluginFunc as any
-		);
-	};
+        throw new Error("STUB");
+    };
 
 	public apply(compiler: Compiler) {
-		compiler.hooks.compilation.tap('StyleguidistOptionsPlugin', this.plugin);
-	}
+        throw new Error("STUB");
+    }
 }

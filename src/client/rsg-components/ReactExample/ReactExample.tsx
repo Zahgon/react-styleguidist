@@ -23,8 +23,8 @@ export default class ReactExample extends Component<ReactExampleProps> {
 	};
 
 	public shouldComponentUpdate(nextProps: ReactExampleProps) {
-		return this.props.code !== nextProps.code;
-	}
+        throw new Error("STUB");
+    }
 
 	// Run example code and return the last top-level expression
 	private getExampleComponent(compiledCode: string): () => any {

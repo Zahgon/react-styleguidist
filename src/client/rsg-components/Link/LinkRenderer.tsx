@@ -4,20 +4,7 @@ import cx from 'clsx';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ color }: Rsg.Theme) => ({
-	link: {
-		'&, &:link, &:visited': {
-			fontSize: 'inherit',
-			color: color.link,
-			textDecoration: 'none',
-		},
-		'&:hover, &:active': {
-			isolate: false,
-			color: color.linkHover,
-			cursor: 'pointer',
-		},
-	},
-});
+const styles = ({ color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface LinkProps extends JssInjectedProps {
 	children: React.ReactNode;
@@ -32,11 +19,7 @@ export const LinkRenderer: React.FunctionComponent<LinkProps> = ({
 	children,
 	...props
 }) => {
-	return (
-		<a {...props} className={cx(classes.link, props.className)}>
-			{children}
-		</a>
-	);
+    throw new Error("STUB");
 };
 
 LinkRenderer.propTypes = {

@@ -5,22 +5,7 @@ import Markdown from 'rsg-components/Markdown';
 import { DOCS_DOCUMENTING } from '../../../scripts/consts';
 import * as Rsg from '../../../typings';
 
-const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => ({
-	button: {
-		padding: 0,
-		fontSize: fontSize.base,
-		fontFamily: fontFamily.base,
-		textDecoration: 'underline',
-		color: color.light,
-		border: 0,
-		cursor: 'pointer',
-		background: 'transparent',
-		'&:hover, &:active': {
-			isolate: false,
-			color: color.lightest,
-		},
-	},
-});
+const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface ExamplePlaceholderProps extends JssInjectedProps {
 	name?: string;
@@ -37,8 +22,8 @@ export class ExamplePlaceholderRenderer extends Component<ExamplePlaceholderProp
 	};
 
 	public handleOpen = () => {
-		this.setState({ isVisible: true });
-	};
+        throw new Error("STUB");
+    };
 
 	public render() {
 		const { classes, name } = this.props;

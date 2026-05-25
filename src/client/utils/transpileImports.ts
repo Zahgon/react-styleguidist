@@ -30,18 +30,8 @@ export default function transpileImports(code: string): string {
 		// import 'foo'
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any 
 		enter: (node: any) => {
-			if (node.type === 'ImportDeclaration' && node.source) {
-				const start = node.start + offset;
-				const end = node.end + offset;
-
-				const statement = code.substring(start, end);
-				const transpiledStatement = rewriteImports(statement);
-
-				code = code.substring(0, start) + transpiledStatement + code.substring(end);
-
-				offset += transpiledStatement.length - statement.length;
-			}
-		},
+            throw new Error("STUB");
+        },
 	});
 
 	return code;

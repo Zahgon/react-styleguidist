@@ -13,31 +13,7 @@ export interface ExamplesRenderer {
 }
 
 const Examples: React.FunctionComponent<ExamplesRenderer> = ({ examples, name, exampleMode }) => {
-	const { codeRevision } = useStyleGuideContext();
-	return (
-		<ExamplesRenderer name={name}>
-			{examples.map((example, index) => {
-				switch (example.type) {
-					case 'code':
-						return (
-							<Playground
-								code={example.content}
-								evalInContext={example.evalInContext}
-								key={`${codeRevision}/${index}`}
-								name={name}
-								index={index}
-								settings={example.settings ?? {}}
-								exampleMode={exampleMode}
-							/>
-						);
-					case 'markdown':
-						return <Markdown text={example.content} key={index} />;
-					default:
-						return null;
-				}
-			})}
-		</ExamplesRenderer>
-	);
+    throw new Error("STUB");
 };
 
 Examples.propTypes = {

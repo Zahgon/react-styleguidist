@@ -13,5 +13,5 @@ export default function filterComponentsByName(
 	query: string
 ): Rsg.Component[] {
 	const regExp = getFilterRegExp(query);
-	return components.filter(({ name }) => regExp.test(name as string));
+	return components.filter(({ name }) => { throw new Error("STUB"); });
 }

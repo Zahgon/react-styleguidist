@@ -23,23 +23,8 @@ export default memoize(
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		cssRevision: string
 	): StyleSheet<string> => {
-		const mergedTheme = merge<RecursivePartial<Rsg.Theme>, Rsg.Theme, RecursivePartial<Rsg.Theme>>(
-			{},
-			theme,
-			config.theme
-		);
-
-		const customStyles =
-			typeof config.styles === 'function' ? config.styles(mergedTheme) : config.styles;
-
-		const mergedStyles: Styles<string> = merge(
-			{},
-			styles(mergedTheme),
-			customStyles && customStyles[componentName]
-		);
-
-		return jss.createStyleSheet(mergedStyles, { meta: componentName, link: true });
-	},
+        throw new Error("STUB");
+    },
 	// calculate the cache key here
-	(styles, config, componentName, cssRevision) => `${componentName}_${cssRevision}`
+	(styles, config, componentName, cssRevision) => { throw new Error("STUB"); }
 );

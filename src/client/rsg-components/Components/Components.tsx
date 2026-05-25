@@ -16,19 +16,7 @@ const Components: React.FunctionComponent<ComponentsProps> = ({
 	exampleMode,
 	usageMode,
 }) => {
-	return (
-		<ComponentsRenderer>
-			{components.map(component => (
-				<ReactComponent
-					key={component.filepath}
-					component={component}
-					exampleMode={exampleMode}
-					usageMode={usageMode}
-					depth={depth}
-				/>
-			))}
-		</ComponentsRenderer>
-	);
+    throw new Error("STUB");
 };
 
 Components.propTypes = {

@@ -8,9 +8,7 @@ interface ComponentsListProps {
 }
 
 const ComponentsList: React.FunctionComponent<ComponentsListProps> = ({ items }) => {
-	const visibleItems = items.filter(item => item.visibleName);
-
-	return visibleItems.length > 0 ? <ComponentsListRenderer items={visibleItems} /> : null;
+    throw new Error("STUB");
 };
 
 ComponentsList.propTypes = {

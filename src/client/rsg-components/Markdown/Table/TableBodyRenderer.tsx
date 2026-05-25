@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const TableBodyRenderer = ({ children }: Props) => {
-	return <tbody>{children}</tbody>;
+    throw new Error("STUB");
 };
 TableBodyRenderer.propTypes = {
 	children: PropTypes.node.isRequired,

@@ -9,15 +9,7 @@ const Sections: React.FunctionComponent<{
 	depth: number;
 	root?: boolean;
 }> = ({ sections, depth }) => {
-	return (
-		<SectionsRenderer>
-			{sections
-				.filter(section => !section.externalLink)
-				.map((section, idx) => (
-					<Section key={idx} section={section} depth={depth} />
-				))}
-		</SectionsRenderer>
-	);
+    throw new Error("STUB");
 };
 
 Sections.propTypes = {

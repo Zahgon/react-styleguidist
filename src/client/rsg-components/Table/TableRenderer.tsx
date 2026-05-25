@@ -3,44 +3,7 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space, color, fontFamily, fontSize }: Rsg.Theme) => ({
-	table: {
-		width: '100%',
-		borderCollapse: 'collapse',
-		marginBottom: space[4],
-	},
-	tableHead: {
-		borderBottom: [[1, color.border, 'solid']],
-	},
-	cellHeading: {
-		color: color.base,
-		paddingRight: space[2],
-		paddingBottom: space[1],
-		textAlign: 'left',
-		fontFamily: fontFamily.base,
-		fontWeight: 'bold',
-		fontSize: fontSize.small,
-		whiteSpace: 'nowrap',
-	},
-	cell: {
-		color: color.base,
-		paddingRight: space[2],
-		paddingTop: space[1],
-		paddingBottom: space[1],
-		verticalAlign: 'top',
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.small,
-		'&:last-child': {
-			isolate: false,
-			width: '99%',
-			paddingRight: 0,
-		},
-		'& p:last-child': {
-			isolate: false,
-			marginBottom: 0,
-		},
-	},
-});
+export const styles = ({ space, color, fontFamily, fontSize }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface TableProps extends JssInjectedProps {
 	columns: {
@@ -57,30 +20,7 @@ export const TableRenderer: React.FunctionComponent<TableProps> = ({
 	rows,
 	getRowKey,
 }) => {
-	return (
-		<table className={classes.table}>
-			<thead className={classes.tableHead}>
-				<tr>
-					{columns.map(({ caption }) => (
-						<th key={caption} className={classes.cellHeading}>
-							{caption}
-						</th>
-					))}
-				</tr>
-			</thead>
-			<tbody>
-				{rows.map(row => (
-					<tr key={getRowKey(row)}>
-						{columns.map(({ render }, index) => (
-							<td key={index} className={classes.cell}>
-								{render(row)}
-							</td>
-						))}
-					</tr>
-				))}
-			</tbody>
-		</table>
-	);
+    throw new Error("STUB");
 };
 
 TableRenderer.propTypes = {

@@ -6,30 +6,24 @@ import Markdown from 'rsg-components/Markdown';
 
 const plural = (array: TagObject[], caption: string) =>
 	array.length === 1 ? caption : `${caption}s`;
-const list = (array: TagObject[]) => array.map(item => item.description).join(', ');
-const paragraphs = (array: TagObject[]) => array.map(item => item.description).join('\n\n');
+const list = (array: TagObject[]) => array.map(item => { throw new Error("STUB"); }).join(', ');
+const paragraphs = (array: TagObject[]) => array.map(item => { throw new Error("STUB"); }).join('\n\n');
 
 const fields = {
-	deprecated: (value: TagObject[]) => `**Deprecated:** ${value[0].description}`,
-	see: (value: TagObject[]) => paragraphs(value),
-	link: (value: TagObject[]) => paragraphs(value),
-	author: (value: TagObject[]) => `${plural(value, 'Author')}: ${list(value)}`,
-	version: (value: TagObject[]) => `Version: ${value[0].description}`,
-	since: (value: TagObject[]) => `Since: ${value[0].description}`,
+	deprecated: (value: TagObject[]) => { throw new Error("STUB"); },
+	see: (value: TagObject[]) => { throw new Error("STUB"); },
+	link: (value: TagObject[]) => { throw new Error("STUB"); },
+	author: (value: TagObject[]) => { throw new Error("STUB"); },
+	version: (value: TagObject[]) => { throw new Error("STUB"); },
+	since: (value: TagObject[]) => { throw new Error("STUB"); },
 };
 
 export function getMarkdown(props: TagProps) {
-	return map(fields, (format: (value: TagObject[]) => string, field: keyof TagProps) => {
-		const tag = props[field];
-		return tag && format(tag);
-	})
-		.filter(Boolean)
-		.join('\n\n');
+    throw new Error("STUB");
 }
 
 export default function JsDoc(props: TagProps) {
-	const markdown = getMarkdown(props);
-	return markdown ? <Markdown text={markdown} /> : null;
+    throw new Error("STUB");
 }
 
 JsDoc.propTypes = {

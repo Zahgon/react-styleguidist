@@ -3,20 +3,14 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ space }: Rsg.Theme) => ({
-	table: {
-		marginTop: 0,
-		marginBottom: space[2],
-		borderCollapse: 'collapse',
-	},
-});
+const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface TableProps extends JssInjectedProps {
 	children: React.ReactNode;
 }
 
 export const TableRenderer: React.FunctionComponent<TableProps> = ({ classes, children }) => {
-	return <table className={classes.table}>{children}</table>;
+    throw new Error("STUB");
 };
 
 TableRenderer.propTypes = {

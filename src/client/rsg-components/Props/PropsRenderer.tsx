@@ -13,25 +13,11 @@ import renderDefault from './renderDefault';
 import { PropDescriptor } from './util';
 
 function renderDescription(prop: PropDescriptor) {
-	const { description, tags = {} } = prop;
-	const extra = renderExtra(prop);
-	const args = [...(tags.arg || []), ...(tags.argument || []), ...(tags.param || [])];
-	const returnDocumentation = (tags.return && tags.return[0]) || (tags.returns && tags.returns[0]);
-
-	return (
-		<div>
-			{description && <Markdown text={description} />}
-			{extra && <Para>{extra}</Para>}
-			<JsDoc {...tags} />
-			{args.length > 0 && <Arguments args={args} heading />}
-			{returnDocumentation && <Argument {...{ ...returnDocumentation, name: '' }} returns />}
-		</div>
-	);
+    throw new Error("STUB");
 }
 
 function renderName(prop: PropDescriptor) {
-	const { name, tags = {} } = prop;
-	return <Name deprecated={!!tags.deprecated}>{name}</Name>;
+    throw new Error("STUB");
 }
 
 export function getRowKey(row: { name: string }) {
@@ -62,7 +48,7 @@ interface PropsProps {
 }
 
 const PropsRenderer: React.FunctionComponent<PropsProps> = ({ props }) => {
-	return <Table columns={columns} rows={props} getRowKey={getRowKey} />;
+    throw new Error("STUB");
 };
 
 PropsRenderer.propTypes = {

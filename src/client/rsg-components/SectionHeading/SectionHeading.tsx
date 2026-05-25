@@ -22,16 +22,7 @@ const SectionHeading: React.FunctionComponent<SectionHeadingProps> = ({
 	href,
 	...rest
 }) => {
-	return (
-		<SectionHeadingRenderer
-			toolbar={<Slot name={slotName} props={slotProps} />}
-			id={id}
-			href={href}
-			{...rest}
-		>
-			{children}
-		</SectionHeadingRenderer>
-	);
+    throw new Error("STUB");
 };
 
 SectionHeading.propTypes = {

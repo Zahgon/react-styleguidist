@@ -8,11 +8,7 @@ import Group from 'react-group';
 import doctrine from 'doctrine';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space }: Rsg.Theme) => ({
-	block: {
-		marginBottom: space[2],
-	},
-});
+export const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 export interface ArgumentProps {
 	name?: string;
@@ -34,38 +30,7 @@ export const ArgumentRenderer: React.FunctionComponent<ArgumentPropsWithClasses>
 	block,
 	...props
 }) => {
-	const isOptional = type && type.type === 'OptionalType';
-	const defaultValue = props.default;
-	if (isOptional) {
-		type = type.expression;
-	}
-	const typeName = type ? doctrine.type.stringify(type) : '';
-	const content = (
-		<Group>
-			{returns && 'Returns'}
-			{name && (
-				<span>
-					<Name>{name}</Name>
-					{type && ':'}
-				</span>
-			)}
-			{type && (
-				<Type>
-					{typeName}
-					{isOptional && '?'}
-					{!!defaultValue && `=${defaultValue}`}
-				</Type>
-			)}
-			{type && description && `—`}
-			{description && <Markdown text={`${description}`} inline />}
-		</Group>
-	);
-
-	if (block) {
-		return <div className={classes.block}>{content}</div>;
-	}
-
-	return content;
+    throw new Error("STUB");
 };
 
 ArgumentRenderer.propTypes = {

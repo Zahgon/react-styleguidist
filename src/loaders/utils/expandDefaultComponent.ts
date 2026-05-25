@@ -9,5 +9,5 @@ const COMPONENT_PLACEHOLDER_REGEXP = new RegExp(COMPONENT_PLACEHOLDER, 'g');
  * @returns {string}
  */
 export default function expandDefaultComponent(source: string, componentName: string): string {
-	return source.replace(COMPONENT_PLACEHOLDER_REGEXP, componentName);
+    throw new Error("STUB");
 }

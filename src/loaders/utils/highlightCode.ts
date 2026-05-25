@@ -21,7 +21,7 @@ import 'prismjs/components/prism-diff';
 const logger = createLogger('rsg');
 
 const IGNORED_LANGUAGES = ['extend', 'insertBefore', 'DFS'];
-const getLanguages = () => Object.keys(Prism.languages).filter(x => !IGNORED_LANGUAGES.includes(x));
+const getLanguages = () => { throw new Error("STUB"); };
 
 /**
  * Highlight code.
@@ -31,19 +31,5 @@ const getLanguages = () => Object.keys(Prism.languages).filter(x => !IGNORED_LAN
  * @returns {string}
  */
 export default function highlightCode(code: string, lang?: string): string {
-	if (!lang) {
-		return code;
-	}
-
-	const grammar = Prism.languages[lang];
-	if (!grammar) {
-		logger.warn(
-			`Syntax highlighting for “${lang}” isn’t supported. Supported languages are: ${getLanguages().join(
-				', '
-			)}.`
-		);
-		return code;
-	}
-
-	return Prism.highlight(code, grammar, lang);
+    throw new Error("STUB");
 }

@@ -17,16 +17,10 @@ export default function filterSectionsByName(
 
 	return sections
 		.map(section => {
-			return {
-				...section,
-				sections: section.sections ? filterSectionsByName(section.sections, query) : [],
-				components: section.components ? filterComponentsByName(section.components, query) : [],
-			};
-		})
+            throw new Error("STUB");
+        })
 		.filter(
 			section =>
-				section.components.length > 0 ||
-				section.sections.length > 0 ||
-				regExp.test(section.name || '-')
+				{ throw new Error("STUB"); }
 		);
 }

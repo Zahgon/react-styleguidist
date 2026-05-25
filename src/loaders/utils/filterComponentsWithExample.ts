@@ -9,13 +9,5 @@ import * as Rsg from '../../typings';
 export default function filterComponentsWithExample(
 	sections: Rsg.LoaderSection[]
 ): Rsg.LoaderSection[] {
-	return sections
-		.map(section => ({
-			...section,
-			sections: filterComponentsWithExample(section.sections),
-			components: section.components.filter(component => component.hasExamples),
-		}))
-		.filter(
-			section => section.components.length > 0 || section.sections.length > 0 || section.content
-		);
+    throw new Error("STUB");
 }

@@ -15,18 +15,5 @@ export default function getExamples(
 	examplesFile?: string | false,
 	defaultExample?: string | false
 ): Rsg.RequireItResult | null {
-	const examplesFileToLoad =
-		(examplesFile && fs.existsSync(examplesFile) ? examplesFile : false) || defaultExample;
-	if (!examplesFileToLoad) {
-		return null;
-	}
-
-	const relativePath = `./${path.relative(path.dirname(examplesFileToLoad), file)}`;
-
-	const query = {
-		displayName,
-		file: relativePath,
-		shouldShowDefaultExample: !examplesFile && !!defaultExample,
-	};
-	return requireIt(`!!${examplesLoader}?${encode(query)}!${examplesFileToLoad}`);
+    throw new Error("STUB");
 }

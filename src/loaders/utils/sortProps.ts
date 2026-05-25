@@ -9,10 +9,7 @@ import { PropDescriptor } from 'react-docgen';
  * @return {array} Sorted properties
  */
 function sortProps(props: PropDescriptor[]) {
-	const requiredPropNames = sortBy(props.filter(prop => prop.required), 'name');
-	const optionalPropNames = sortBy(props.filter(prop => !prop.required), 'name');
-	const sortedProps = requiredPropNames.concat(optionalPropNames);
-	return sortedProps;
+    throw new Error("STUB");
 }
 
 export default sortProps;

@@ -3,16 +3,7 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => ({
-	root: {
-		margin: 0,
-		lineHeight: 1.2,
-		fontSize: fontSize.small,
-		fontFamily: fontFamily.monospace,
-		color: color.error,
-		whiteSpace: 'pre-wrap',
-	},
-});
+const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface PlaygroundErrorProps extends JssInjectedProps {
 	message: string;
@@ -21,7 +12,7 @@ interface PlaygroundErrorProps extends JssInjectedProps {
 export const PlaygroundErrorRenderer: React.FunctionComponent<PlaygroundErrorProps> = ({
 	classes,
 	message,
-}) => <pre className={classes.root}>{message}</pre>;
+}) => { throw new Error("STUB"); };
 
 PlaygroundErrorRenderer.propTypes = {
 	classes: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,

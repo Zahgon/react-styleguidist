@@ -5,11 +5,7 @@ import SectionHeading from 'rsg-components/SectionHeading';
 import Markdown from 'rsg-components/Markdown';
 import * as Rsg from '../../../typings';
 
-const styles = ({ space }: Rsg.Theme) => ({
-	root: {
-		marginBottom: space[4],
-	},
-});
+const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface SectionRendererProps extends JssInjectedProps {
 	slug: string;
@@ -25,37 +21,7 @@ interface SectionRendererProps extends JssInjectedProps {
 }
 
 export const SectionRenderer: React.FunctionComponent<SectionRendererProps> = (allProps) => {
-	const {
-		classes,
-		name,
-		slug,
-		content,
-		components,
-		sections,
-		depth,
-		description,
-		pagePerSection,
-	} = allProps;
-
-	return (
-		<section className={classes.root} data-testid={`section-${slug}`}>
-			{name && (
-				<SectionHeading
-					depth={depth}
-					id={slug}
-					slotName="sectionToolbar"
-					pagePerSection={pagePerSection}
-					slotProps={allProps}
-				>
-					{name}
-				</SectionHeading>
-			)}
-			{description && <Markdown text={description} />}
-			{content}
-			{sections}
-			{components}
-		</section>
-	);
+    throw new Error("STUB");
 };
 
 SectionRenderer.propTypes = {

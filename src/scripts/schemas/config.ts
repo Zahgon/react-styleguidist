@@ -76,7 +76,7 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 		example: 'components/**/[A-Z]*.js',
 	},
 	configDir: {
-		process: (value: string, config: Rsg.StyleguidistConfig, rootDir: string): string => rootDir,
+		process: (value: string, config: Rsg.StyleguidistConfig, rootDir: string): string => { throw new Error("STUB"); },
 	},
 	context: {
 		type: 'object',
@@ -98,42 +98,29 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 		type: ['boolean', 'existing file path'],
 		default: false,
 		process: (val: boolean | string): string | boolean =>
-			val === true ? path.resolve(__dirname, '../../../templates/DefaultExample.md') : val,
+			{ throw new Error("STUB"); },
 	},
 	exampleMode: {
 		type: 'string',
 		process: (value: string, config: Rsg.StyleguidistConfig): string => {
-			return config.showCode === undefined ? value : config.showCode ? 'expand' : 'collapse';
-		},
+            throw new Error("STUB");
+        },
 		default: 'collapse',
 	},
 	getComponentPathLine: {
 		type: 'function',
-		default: (componentPath: string): string => componentPath,
+		default: (componentPath: string): string => { throw new Error("STUB"); },
 	},
 	getExampleFilename: {
 		type: 'function',
 		default: (componentPath: string): string | boolean => {
-			const files = [
-				path.join(path.dirname(componentPath), 'Readme.md'),
-				// ComponentName.md
-				componentPath.replace(path.extname(componentPath), '.md'),
-				// FolderName.md when component definition file is index.js
-				path.join(path.dirname(componentPath), path.basename(path.dirname(componentPath)) + '.md'),
-			];
-			for (const file of files) {
-				const existingFile = fileExistsCaseInsensitive(file);
-				if (existingFile) {
-					return existingFile;
-				}
-			}
-			return false;
-		},
+            throw new Error("STUB");
+        },
 	},
 	handlers: {
 		type: 'function',
 		default: (componentPath: string): reactDocgen.Handler[] =>
-			reactDocgen.defaultHandlers.concat(createDisplayNameHandler(componentPath)),
+			{ throw new Error("STUB"); },
 	},
 	ignore: {
 		type: 'array',
@@ -146,14 +133,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 	},
 	editorConfig: {
 		process: (value?: unknown): void => {
-			if (value) {
-				throw new StyleguidistError(
-					`${kleur.bold(
-						'editorConfig'
-					)} config option was removed. Use “theme” option to change syntax highlighting.`
-				);
-			}
-		},
+            throw new Error("STUB");
+        },
 	},
 	logger: {
 		type: 'object',
@@ -202,12 +183,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 				) => void;
 			}
 		) => {
-			const findAllExportedComponentDefinitions =
-				reactDocgen.resolver.findAllExportedComponentDefinitions;
-			const annotatedComponents = annotationResolver(ast, recast);
-			const exportedComponents = findAllExportedComponentDefinitions(ast, recast);
-			return annotatedComponents.concat(exportedComponents);
-		},
+            throw new Error("STUB");
+        },
 	},
 	ribbon: {
 		type: 'object',
@@ -220,18 +197,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 		type: 'array',
 		default: [],
 		process: (val: Rsg.ConfigSection[], config: Rsg.StyleguidistConfig): Rsg.ConfigSection[] => {
-			if (!val) {
-				// If root `components` isn't empty, make it a first section
-				// If `components` and `sections` weren’t specified, use default pattern
-				const components = config.components || DEFAULT_COMPONENTS_PATTERN;
-				return [
-					{
-						components,
-					},
-				];
-			}
-			return val;
-		},
+            throw new Error("STUB");
+        },
 		example: [
 			{
 				name: 'Documentation',
@@ -290,23 +257,15 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 			},
 		},
 		process: (val: NestedThemeValue, config: unknown, configDir: string): NestedThemeValue => {
-			return typeof val === 'string' ? path.resolve(configDir, val) : val;
-		},
+            throw new Error("STUB");
+        },
 	},
 	template: {
 		type: ['object', 'function'],
 		default: {},
 		process: (val: any) => {
-			if (typeof val === 'string') {
-				throw new StyleguidistError(
-					`${kleur.bold(
-						'template'
-					)} config option format has been changed, you need to update your config.`,
-					'template'
-				);
-			}
-			return val;
-		},
+            throw new Error("STUB");
+        },
 	},
 	theme: {
 		type: ['object', 'existing file path'],
@@ -316,17 +275,13 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 			linkHover: 'salmon',
 		},
 		process: (val: NestedThemeValue, config: unknown, configDir: string): NestedThemeValue =>
-			typeof val === 'string' ? path.resolve(configDir, val) : val,
+			{ throw new Error("STUB"); },
 	},
 	title: {
 		type: 'string',
 		process: (val?: string): string => {
-			if (val) {
-				return val;
-			}
-			const name = getUserPackageJson().name || '';
-			return `${startCase(name)} Style Guide`;
-		},
+            throw new Error("STUB");
+        },
 		example: 'My Style Guide',
 	},
 	updateDocs: {
@@ -335,15 +290,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 	updateExample: {
 		type: 'function',
 		default: (props: { lang: string }): { lang: string } => {
-			if (props.lang === 'example') {
-				props.lang = 'js';
-				logger.warn(
-					'"example" code block language is deprecated. Use "js", "jsx" or "javascript" instead:\n' +
-						consts.DOCS_DOCUMENTING
-				);
-			}
-			return props;
-		},
+            throw new Error("STUB");
+        },
 	},
 	updateWebpackConfig: {
 		type: 'function',
@@ -352,8 +300,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 	usageMode: {
 		type: 'string',
 		process: (value: string, config: Rsg.StyleguidistConfig) => {
-			return config.showUsage === undefined ? value : config.showUsage ? 'expand' : 'collapse';
-		},
+            throw new Error("STUB");
+        },
 		default: 'collapse',
 	},
 	verbose: {
@@ -366,25 +314,8 @@ const configSchema: Record<StyleguidistConfigKey, ConfigSchemaOptions<Rsg.Styleg
 	webpackConfig: {
 		type: ['object', 'function'],
 		process: (val?: any) => {
-			if (val) {
-				return val;
-			}
-
-			const file = findUserWebpackConfig();
-			if (file) {
-				logger.info(`Loading webpack config from:\n${file}`);
-				// eslint-disable-next-line import/no-dynamic-require
-				return require(file);
-			}
-
-			logger.warn(
-				'No webpack config found. ' +
-					'You may need to specify "webpackConfig" option in your style guide config:\n' +
-					consts.DOCS_WEBPACK
-			);
-
-			return undefined;
-		},
+            throw new Error("STUB");
+        },
 		example: {
 			module: {
 				rules: [

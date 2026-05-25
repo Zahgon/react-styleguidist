@@ -13,7 +13,7 @@ import { DisplayModes, UsageModes } from '../../consts';
 import * as Rsg from '../../../typings';
 
 const ExamplePlaceholder =
-	process.env.STYLEGUIDIST_ENV !== 'production' ? ExamplePlaceholderDefault : () => <div />;
+	process.env.STYLEGUIDIST_ENV !== 'production' ? ExamplePlaceholderDefault : () => { throw new Error("STUB"); };
 
 interface ReactComponentProps {
 	component: Rsg.Component;
@@ -41,10 +41,8 @@ export default class ReactComponent extends Component<ReactComponentProps, React
 	};
 
 	private handleTabChange = (name: string) => {
-		this.setState((state) => ({
-			activeTab: state.activeTab !== name ? name : undefined,
-		}));
-	};
+        throw new Error("STUB");
+    };
 
 	public render() {
 		const { activeTab } = this.state;

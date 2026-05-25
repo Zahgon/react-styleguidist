@@ -33,10 +33,8 @@ class Playground extends Component<PlaygroundProps, PlaygroundState> {
 	public static contextType = Context;
 
 	private handleChange = debounce((code) => {
-		this.setState({
-			code,
-		});
-	}, (this.context as StyleGuideContextContents).config.previewDelay);
+        throw new Error("STUB");
+    }, (this.context as StyleGuideContextContents).config.previewDelay);
 
 	public state: PlaygroundState = {
 		code: this.props.code,
@@ -45,31 +43,20 @@ class Playground extends Component<PlaygroundProps, PlaygroundState> {
 	};
 
 	public static getDerivedStateFromProps(nextProps: PlaygroundProps, prevState: PlaygroundState) {
-		const { code } = nextProps;
-		if (prevState.prevCode !== code) {
-			return {
-				prevCode: code,
-				code,
-			};
-		}
-		return null;
-	}
+        throw new Error("STUB");
+    }
 
 	public componentWillUnmount() {
-		// Clear pending changes
-		this.handleChange.cancel();
-	}
+        throw new Error("STUB");
+    }
 
 	private getInitialActiveTab(): boolean {
-		const expandCode = this.props.exampleMode === ExampleModes.expand;
-		return this.props.settings.showcode !== undefined ? this.props.settings.showcode : expandCode;
-	}
+        throw new Error("STUB");
+    }
 
 	private handleTabChange = (name: string) => {
-		this.setState((state) => ({
-			activeTab: state.activeTab !== name ? name : undefined,
-		}));
-	};
+        throw new Error("STUB");
+    };
 
 	public render() {
 		const { code, activeTab } = this.state;

@@ -20,13 +20,9 @@ const getFilesMatchingGlobs = (components: string[], rootDir?: string, ignore?: 
 	ignore = ignore || [];
 	return components
 		.map(listItem =>
-			glob.sync(listItem, {
-				cwd: rootDir,
-				ignore,
-				absolute: true,
-			})
+			{ throw new Error("STUB"); }
 		)
-		.reduce((accumulator, current) => accumulator.concat(current), []);
+		.reduce((accumulator, current) => { throw new Error("STUB"); }, []);
 };
 
 /**
@@ -53,7 +49,7 @@ export default function getComponentFiles(
 	const componentFiles = getFilesMatchingGlobs(componentGlobs, rootDir, ignore);
 
 	// Get absolute component file paths with correct slash separator format
-	const resolvedComponentFiles = componentFiles.map(file => path.resolve(file));
+	const resolvedComponentFiles = componentFiles.map(file => { throw new Error("STUB"); });
 
 	return resolvedComponentFiles;
 }

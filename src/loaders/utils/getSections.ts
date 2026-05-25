@@ -15,37 +15,14 @@ function processSectionContent(
 	section: Rsg.ConfigSection,
 	config: Rsg.SanitizedStyleguidistConfig
 ): Rsg.RequireItResult | Rsg.MarkdownExample | undefined {
-	if (!section.content) {
-		return undefined;
-	}
-
-	const contentRelativePath = section.content;
-
-	if (_.isFunction(section.content)) {
-		return {
-			type: 'markdown',
-			content: section.content(),
-		};
-	}
-
-	// Try to load section content file
-	const contentAbsolutePath = path.resolve(config.configDir, contentRelativePath);
-	if (!fs.existsSync(contentAbsolutePath)) {
-		throw new Error(`Styleguidist: Section content file not found: ${contentAbsolutePath}`);
-	}
-	return requireIt(`!!${examplesLoader}!${contentAbsolutePath}`);
+    throw new Error("STUB");
 }
 
 const getSectionComponents = (
 	section: Rsg.ConfigSection,
 	config: Rsg.SanitizedStyleguidistConfig
 ) => {
-	let ignore = config.ignore ? _.castArray(config.ignore) : [];
-	if (section.ignore) {
-		ignore = ignore.concat(_.castArray(section.ignore));
-	}
-
-	return getComponents(getComponentFiles(section.components, config.configDir, ignore), config);
+    throw new Error("STUB");
 };
 
 /**
@@ -61,8 +38,7 @@ export default function getSections(
 	config: Rsg.SanitizedStyleguidistConfig,
 	parentDepth?: number
 ): Rsg.LoaderSection[] {
-	// eslint-disable-next-line @typescript-eslint/no-use-before-define
-	return sections.map(section => processSection(section, config, parentDepth));
+    throw new Error("STUB");
 }
 
 /**
@@ -77,25 +53,5 @@ export function processSection(
 	config: Rsg.SanitizedStyleguidistConfig,
 	parentDepth?: number
 ): Rsg.LoaderSection {
-	const content = processSectionContent(section, config);
-
-	let sectionDepth;
-
-	if (parentDepth === undefined) {
-		sectionDepth = section.sectionDepth !== undefined ? section.sectionDepth : 0;
-	} else {
-		sectionDepth = parentDepth === 0 ? 0 : parentDepth - 1;
-	}
-
-	return {
-		...section,
-		exampleMode: section.exampleMode || config.exampleMode,
-		usageMode: section.usageMode || config.usageMode,
-		sectionDepth,
-		slug: `section-${slugger.slug(section.name || 'untitled')}`,
-		sections: getSections(section.sections || [], config, sectionDepth),
-		href: section.href,
-		components: getSectionComponents(section, config),
-		content,
-	};
+    throw new Error("STUB");
 }

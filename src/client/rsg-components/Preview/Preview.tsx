@@ -6,10 +6,7 @@ import Context, { StyleGuideContextContents } from 'rsg-components/Context';
 import { createRoot, Root } from 'react-dom/client';
 
 const improveErrorMessage = (message: string) =>
-	message.replace(
-		'Check the render method of `StateHolder`.',
-		'Check the code of your example in a Markdown file or in the editor below.'
-	);
+	{ throw new Error("STUB"); };
 
 interface PreviewProps {
 	code: string;
@@ -36,99 +33,36 @@ export default class Preview extends Component<PreviewProps, PreviewState> {
 	};
 
 	public componentDidMount() {
-		// Clear console after hot reload, do not clear on the first load
-		// to keep any warnings
-		if ((this.context as StyleGuideContextContents).codeRevision > 0) {
-			// eslint-disable-next-line no-console
-			console.clear();
-		}
-
-		this.executeCode();
-	}
+        throw new Error("STUB");
+    }
 
 	public shouldComponentUpdate(nextProps: PreviewProps, nextState: PreviewState) {
-		return this.state.error !== nextState.error || this.props.code !== nextProps.code;
-	}
+        throw new Error("STUB");
+    }
 
 	public componentDidUpdate(prevProps: PreviewProps) {
-		if (this.props.code !== prevProps.code) {
-			this.executeCode();
-		}
-	}
+        throw new Error("STUB");
+    }
 
 	public componentWillUnmount() {
-		this.unmountPreview();
-	}
+        throw new Error("STUB");
+    }
 
 	public unmountPreview() {
-		const self = this;
-		if (self.timeoutId) {
-			clearTimeout(self.timeoutId);
-		}
-		const id = setTimeout(() => {
-			if (self.reactRoot) {
-				self.reactRoot.unmount();
-				self.reactRoot = null;
-			}
-		});
-		self.timeoutId = id;
-	}
+        throw new Error("STUB");
+    }
 
 	private executeCode() {
-		this.setState({
-			error: null,
-		});
-
-		const { code } = this.props;
-		if (!code) {
-			return;
-		}
-
-		const wrappedComponent: React.FunctionComponentElement<any> = (
-			<ReactExample
-				code={code}
-				evalInContext={this.props.evalInContext}
-				onError={this.handleError}
-				compilerConfig={(this.context as StyleGuideContextContents).config.compilerConfig}
-			/>
-		);
-
-		/* istanbul ignore next */
-		window.requestAnimationFrame(() => {
-			if (!this.mountNode) {
-				return;
-			}
-			try {
-				if (this.reactRoot === null) {
-					this.reactRoot = createRoot(this.mountNode);
-					this.reactRoot.render(wrappedComponent);
-				} else {
-					this.reactRoot.render(wrappedComponent);
-				}
-			} catch (err) {
-				if (err instanceof Error) {
-					this.handleError(err);
-				}
-			}
-		});
-	}
+        throw new Error("STUB");
+    }
 
 	private handleError = (err: Error) => {
-		this.unmountPreview();
-
-		this.setState({
-			error: improveErrorMessage(err.toString()),
-		});
-
-		console.error(err); // eslint-disable-line no-console
-	};
+        throw new Error("STUB");
+    };
 
 	private callbackRef = (ref: HTMLDivElement | null) => {
-		this.mountNode = ref;
-		if (!this.reactRoot && ref) {
-			this.reactRoot = createRoot(ref);
-		}
-	};
+        throw new Error("STUB");
+    };
 
 	public render() {
 		const { error } = this.state;

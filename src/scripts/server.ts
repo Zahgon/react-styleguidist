@@ -7,10 +7,5 @@ export default function server(
 	config: Rsg.SanitizedStyleguidistConfig,
 	callback: (error?: Error) => void
 ): { app: WebpackDevServer; compiler: webpack.Compiler } {
-	const env = 'development';
-	const serverInfo = createServer(config, env);
-
-	serverInfo.app.startCallback(callback);
-
-	return serverInfo;
+    throw new Error("STUB");
 }

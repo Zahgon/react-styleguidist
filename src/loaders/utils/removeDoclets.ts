@@ -7,5 +7,5 @@ const DOCLET_REGEXP = /^@(\w+)(?:$|\s((?:[^](?!^@\w))*))/gim;
  * @returns {string}
  */
 export default function removeDoclets(text: string) {
-	return text.replace(DOCLET_REGEXP, '');
+    throw new Error("STUB");
 }

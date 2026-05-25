@@ -12,8 +12,8 @@ export default class Wrapper extends Component<Props> {
 	};
 
 	public componentDidCatch(error: Error) {
-		this.props.onError(error);
-	}
+        throw new Error("STUB");
+    }
 
 	public render() {
 		return this.props.children;

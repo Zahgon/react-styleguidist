@@ -12,25 +12,7 @@ export interface IsolateButtonProps {
 }
 
 const IsolateButton = ({ name, example, isolated, href }: IsolateButtonProps) => {
-	if (isolated && !href) {
-		return null;
-	}
-
-	const testID = example ? `${name}-${example}-isolate-button` : `${name}-isolate-button`;
-
-	return isolated ? (
-		<ToolbarButton href={href} title="Show all components" testId={testID}>
-			<MdFullscreenExit />
-		</ToolbarButton>
-	) : (
-		<ToolbarButton
-			href={getUrl({ name, example, isolated: true })}
-			title="Open isolated"
-			testId={testID}
-		>
-			<MdFullscreen />
-		</ToolbarButton>
-	);
+    throw new Error("STUB");
 };
 
 IsolateButton.propTypes = {

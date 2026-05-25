@@ -13,30 +13,20 @@ export const columns = [
 	{
 		caption: 'Method name',
 		// eslint-disable-next-line react/prop-types
-		render: ({ name, tags = {} }: MethodDescriptor) => (
-			<Name deprecated={!!tags.deprecated}>{`${name}()`}</Name>
-		),
+		render: ({ name, tags = {} }: MethodDescriptor) => { throw new Error("STUB"); },
 	},
 	{
 		caption: 'Parameters',
 		// eslint-disable-next-line react/prop-types
-		render: ({ params = [] }: MethodDescriptor) => <Arguments args={params} />,
+		render: ({ params = [] }: MethodDescriptor) => { throw new Error("STUB"); },
 	},
 	{
 		caption: 'Description',
 		// eslint-disable-next-line react/prop-types
-		render: ({ description, returns, tags = {} }: MethodDescriptor) => (
-			<div>
-				{description && <Markdown text={description} />}
-				{returns && <Argument block returns {...returns} />}
-				<JsDoc {...tags} />
-			</div>
-		),
+		render: ({ description, returns, tags = {} }: MethodDescriptor) => { throw new Error("STUB"); },
 	},
 ];
 
-const MethodsRenderer: React.FunctionComponent<{ methods: MethodDescriptor[] }> = ({ methods }) => (
-	<Table columns={columns} rows={methods} getRowKey={getRowKey} />
-);
+const MethodsRenderer: React.FunctionComponent<{ methods: MethodDescriptor[] }> = ({ methods }) => { throw new Error("STUB"); };
 
 export default MethodsRenderer;

@@ -4,11 +4,7 @@ import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import Heading from 'rsg-components/Heading';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ space }: Rsg.Theme) => ({
-	spacing: {
-		marginBottom: space[2],
-	},
-});
+const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface MarkdownHeadingProps extends JssInjectedProps {
 	children: React.ReactNode;
@@ -22,13 +18,7 @@ const MarkdownHeadingRenderer: React.FunctionComponent<MarkdownHeadingProps> = (
 	children,
 	id,
 }) => {
-	return (
-		<div className={classes.spacing}>
-			<Heading level={level} id={id}>
-				{children}
-			</Heading>
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 MarkdownHeadingRenderer.propTypes = {

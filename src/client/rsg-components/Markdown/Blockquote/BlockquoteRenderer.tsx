@@ -4,16 +4,7 @@ import cx from 'clsx';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ space, color, fontSize, fontFamily }: Rsg.Theme) => ({
-	blockquote: {
-		margin: [[space[2], space[4]]],
-		padding: 0,
-		color: color.base,
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.base,
-		lineHeight: 1.5,
-	},
-});
+const styles = ({ space, color, fontSize, fontFamily }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface BlockquoteProps extends JssInjectedProps {
 	children: React.ReactNode;
@@ -25,8 +16,7 @@ export const BlockquoteRenderer: React.FunctionComponent<BlockquoteProps> = ({
 	className,
 	children,
 }) => {
-	const blockquoteClasses = cx(classes.blockquote, className);
-	return <blockquote className={blockquoteClasses}>{children}</blockquote>;
+    throw new Error("STUB");
 };
 
 BlockquoteRenderer.propTypes = {

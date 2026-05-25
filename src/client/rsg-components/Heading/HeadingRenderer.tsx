@@ -4,34 +4,7 @@ import cx from 'clsx';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ color, fontFamily, fontSize }: Rsg.Theme) => ({
-	heading: {
-		margin: 0,
-		color: color.base,
-		fontFamily: fontFamily.base,
-		fontWeight: 'normal',
-	},
-	heading1: {
-		fontSize: fontSize.h1,
-	},
-	heading2: {
-		fontSize: fontSize.h2,
-	},
-	heading3: {
-		fontSize: fontSize.h3,
-	},
-	heading4: {
-		fontSize: fontSize.h4,
-	},
-	heading5: {
-		fontSize: fontSize.h5,
-		fontWeight: 'bold',
-	},
-	heading6: {
-		fontSize: fontSize.h6,
-		fontStyle: 'italic',
-	},
-});
+const styles = ({ color, fontFamily, fontSize }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface HeadingProps extends JssInjectedProps, React.HTMLAttributes<HTMLHeadingElement> {
 	children?: React.ReactNode;
@@ -44,14 +17,7 @@ const HeadingRenderer: React.FunctionComponent<HeadingProps> = ({
 	children,
 	...props
 }) => {
-	const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-	const headingClasses = cx(classes.heading, classes[`heading${level}`]);
-
-	return (
-		<Tag {...props} className={headingClasses}>
-			{children}
-		</Tag>
-	);
+    throw new Error("STUB");
 };
 
 HeadingRenderer.propTypes = {

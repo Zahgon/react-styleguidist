@@ -3,22 +3,14 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ fontFamily }: Rsg.Theme) => ({
-	code: {
-		fontFamily: fontFamily.monospace,
-		fontSize: 'inherit',
-		color: 'inherit',
-		background: 'transparent',
-		whiteSpace: 'inherit',
-	},
-});
+const styles = ({ fontFamily }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface CodeProps extends JssInjectedProps {
 	children: React.ReactNode;
 }
 
 export const CodeRenderer: React.FunctionComponent<CodeProps> = ({ classes, children }) => {
-	return <code className={classes.code}>{children}</code>;
+    throw new Error("STUB");
 };
 CodeRenderer.propTypes = {
 	classes: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,

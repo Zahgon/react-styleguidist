@@ -5,26 +5,7 @@ import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import prismTheme from '../../../styles/prismTheme';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ space, color, fontSize, fontFamily, borderRadius }: Rsg.Theme) => ({
-	pre: {
-		fontFamily: fontFamily.monospace,
-		fontSize: fontSize.small,
-		lineHeight: 1.5,
-		color: color.base,
-		whiteSpace: 'pre-wrap',
-		wordWrap: 'normal',
-		tabSize: 2,
-		hyphens: 'none',
-		backgroundColor: color.codeBackground,
-		padding: [[space[1], space[2]]],
-		border: [[1, color.codeBackground, 'solid']],
-		borderRadius,
-		marginTop: 0,
-		marginBottom: space[2],
-		overflow: 'auto',
-		...prismTheme({ color }),
-	},
-});
+const styles = ({ space, color, fontSize, fontFamily, borderRadius }: Rsg.Theme) => { throw new Error("STUB"); };
 
 export interface PreProps {
 	className?: string;
@@ -38,13 +19,7 @@ export const PreRenderer: React.FunctionComponent<PrePropsWithClasses> = ({
 	className,
 	children,
 }) => {
-	const classNames = cx(className, classes.pre);
-
-	const isHighlighted = className && className.indexOf('lang-') !== -1;
-	if (isHighlighted && children) {
-		return <pre className={classNames} dangerouslySetInnerHTML={{ __html: children.toString() }} />;
-	}
-	return <pre className={classNames}>{children}</pre>;
+    throw new Error("STUB");
 };
 
 PreRenderer.propTypes = {

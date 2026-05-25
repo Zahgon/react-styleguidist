@@ -12,33 +12,5 @@ const toolbar = [IsolateButton];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (config?: Rsg.ProcessedStyleguidistConfig) => {
-	return {
-		sectionToolbar: toolbar,
-		componentToolbar: toolbar,
-		exampleToolbar: toolbar,
-		exampleTabButtons: [
-			{
-				id: EXAMPLE_TAB_CODE_EDITOR,
-				render: CodeTabButton,
-			},
-		],
-		exampleTabs: [
-			{
-				id: EXAMPLE_TAB_CODE_EDITOR,
-				render: Editor,
-			},
-		],
-		docsTabButtons: [
-			{
-				id: DOCS_TAB_USAGE,
-				render: UsageTabButton,
-			},
-		],
-		docsTabs: [
-			{
-				id: DOCS_TAB_USAGE,
-				render: Usage,
-			},
-		],
-	};
+    throw new Error("STUB");
 };

@@ -4,30 +4,14 @@ import Markdown from 'rsg-components/Markdown';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ space }: Rsg.Theme) => ({
-	root: {
-		marginBottom: space[4],
-	},
-});
+const styles = ({ space }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface MessageProps extends JssInjectedProps {
 	children: React.ReactNode;
 }
 
 export const MessageRenderer: React.FunctionComponent<MessageProps> = ({ classes, children }) => {
-	return (
-		<div className={classes.root}>
-			<Markdown
-				text={
-					Array.isArray(children)
-						? children.join('\n')
-						: typeof children === 'string'
-						? children
-						: ''
-				}
-			/>
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 MessageRenderer.propTypes = {

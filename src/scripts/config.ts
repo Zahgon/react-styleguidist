@@ -16,14 +16,7 @@ const CONFIG_FILENAME = 'styleguide.config.js';
  * @return {string|boolean} Config absolute file path.
  */
 function findConfigFile(): string | false {
-	let configDir;
-	try {
-		configDir = findup.sync(process.cwd(), CONFIG_FILENAME);
-	} catch (exception) {
-		return false;
-	}
-
-	return path.join(configDir, CONFIG_FILENAME);
+    throw new Error("STUB");
 }
 
 /**
@@ -37,46 +30,7 @@ function getConfig(
 	config?: string | Rsg.StyleguidistConfig,
 	update?: (conf: Rsg.StyleguidistConfig) => Rsg.StyleguidistConfig
 ): Rsg.SanitizedStyleguidistConfig {
-	let configFilepath: string | false = false;
-	if (isString(config)) {
-		// Load config from a given file
-		configFilepath = path.resolve(process.cwd(), config);
-		if (!fs.existsSync(configFilepath)) {
-			throw new StyleguidistError('Styleguidist config not found: ' + configFilepath + '.');
-		}
-		config = {};
-	} else if (!isPlainObject(config)) {
-		// Try to read config options from a file
-		configFilepath = findConfigFile();
-		config = {};
-	}
-
-	if (configFilepath) {
-		config = require(configFilepath);
-	}
-
-	if (!config || isString(config)) {
-		return {} as any;
-	}
-
-	if (update) {
-		config = update(config);
-	}
-
-	const configDir = configFilepath ? path.dirname(configFilepath) : process.cwd();
-
-	try {
-		return sanitizeConfig(config, schema, configDir) as any;
-	} catch (exception) {
-		if (exception instanceof StyleguidistError) {
-			throw new StyleguidistError(
-				`Something is wrong with your style guide config\n\n${exception.message}`,
-				exception.extra
-			);
-		} else {
-			throw exception;
-		}
-	}
+    throw new Error("STUB");
 }
 
 export default getConfig;

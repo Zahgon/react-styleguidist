@@ -9,9 +9,9 @@ const logger = loggerMaker('rsg');
 const format = (message: string) => message.trim() + '\n';
 
 const printers: Record<string, (message: string) => void> = {
-	info: (message: string) => console.log(format(message)),
-	warn: (message: string) => console.warn(kleur.yellow(`Warning: ${format(message)}`)),
-	debug: (message: string) => console.log(format(message)),
+	info: (message: string) => { throw new Error("STUB"); },
+	warn: (message: string) => { throw new Error("STUB"); },
+	debug: (message: string) => { throw new Error("STUB"); },
 };
 
 /**
@@ -28,10 +28,5 @@ export default function setupLogger(
 	verbose?: boolean,
 	defaults?: Record<string, (message: string) => void>
 ) {
-	_.flow(
-		_.defaults(defaults || printers),
-		_.omit(verbose ? [] : ['debug']),
-		_.toPairs,
-		_.forEach((printer: any[]) => logger.on(printer[0], printer[1]))
-	)(methods);
+    throw new Error("STUB");
 }

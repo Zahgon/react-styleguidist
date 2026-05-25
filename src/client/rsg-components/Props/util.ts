@@ -4,7 +4,7 @@ import { PropDescriptor as BasePropDescriptor, PropTypeDescriptor } from 'react-
  * Remove quotes around given string.
  */
 export function unquote(string?: string): string | undefined {
-	return string && string.replace(/^['"]|['"]$/g, '');
+    throw new Error("STUB");
 }
 
 export interface PropDescriptor extends BasePropDescriptor {
@@ -19,30 +19,14 @@ export interface PropDescriptor extends BasePropDescriptor {
  * @returns {object}
  */
 export function getType(prop: PropDescriptor): PropTypeDescriptor | TypeDescriptor | undefined {
-	if (prop.flowType) {
-		if (
-			prop.flowType.name === 'union' &&
-			prop.flowType.elements.every((elem: { name: string }) => elem.name === 'literal')
-		) {
-			return {
-				...prop.flowType,
-				name: 'enum',
-				value: prop.flowType.elements,
-			};
-		}
-		return prop.flowType;
-	}
-	if (prop.tsType) {
-		return prop.tsType;
-	}
-	return prop.type;
+    throw new Error("STUB");
 }
 
 /**
  * Show starting and ending whitespace around given string.
  */
 export function showSpaces(string?: string): string | undefined {
-	return string && string.replace(/^\s|\s$/g, '␣');
+    throw new Error("STUB");
 }
 
 export interface TypeEnumDescriptor {

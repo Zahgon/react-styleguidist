@@ -12,5 +12,5 @@ export default function getComponents(
 	components: string[],
 	config: Rsg.SanitizedStyleguidistConfig
 ) {
-	return components.map(filepath => processComponent(filepath, config));
+	return components.map(filepath => { throw new Error("STUB"); });
 }

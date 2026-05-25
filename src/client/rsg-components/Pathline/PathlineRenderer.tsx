@@ -5,36 +5,14 @@ import ToolbarButton from 'rsg-components/ToolbarButton';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ space, fontFamily, fontSize, color }: Rsg.Theme) => ({
-	pathline: {
-		fontFamily: fontFamily.monospace,
-		fontSize: fontSize.small,
-		color: color.light,
-		wordBreak: 'break-all',
-	},
-	copyButton: {
-		marginLeft: space[0],
-	},
-});
+export const styles = ({ space, fontFamily, fontSize, color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface Props extends JssInjectedProps {
 	children?: React.ReactNode;
 }
 
 export const PathlineRenderer = ({ classes, children }: Props) => {
-	return (
-		<div className={classes.pathline}>
-			{children}
-			<ToolbarButton
-				small
-				className={classes.copyButton}
-				onClick={() => children && copy(children.toString())}
-				title="Copy to clipboard"
-			>
-				<MdContentCopy />
-			</ToolbarButton>
-		</div>
-	);
+    throw new Error("STUB");
 };
 
 export default Styled<JssInjectedProps>(styles)(PathlineRenderer);

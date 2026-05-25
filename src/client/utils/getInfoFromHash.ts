@@ -27,7 +27,7 @@ export default function getInfoFromHash(
 		const targetHash = hashArray[hashArray.length - 1];
 		return {
 			isolate: shouldIsolate,
-			hashArray: hashArray.filter(item => !hasDigitsOnly(item)),
+			hashArray: hashArray.filter(item => { throw new Error("STUB"); }),
 			targetName: hashArray[0],
 			targetIndex: hasDigitsOnly(targetHash) ? parseInt(targetHash, 10) : undefined,
 		};

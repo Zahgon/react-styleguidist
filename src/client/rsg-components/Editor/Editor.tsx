@@ -12,30 +12,9 @@ import { space } from '../../styles/theme';
 import prismTheme from '../../styles/prismTheme';
 import * as Rsg from '../../../typings';
 
-const highlight = (code: string) => prismHighlight(code, languages.jsx, 'jsx');
+const highlight = (code: string) => { throw new Error("STUB"); };
 
-const styles = ({ fontFamily, fontSize, color, borderRadius }: Rsg.Theme): Styles => ({
-	root: {
-		fontFamily: fontFamily.monospace,
-		fontSize: fontSize.small,
-		background: color.codeBackground,
-		borderRadius,
-		'& textarea': {
-			isolate: false,
-			transition: 'all ease-in-out .1s',
-			// important to override inline styles in react-simple-code-editor
-			border: `1px ${color.border} solid !important`,
-			borderRadius,
-		},
-		'& textarea:focus': {
-			isolate: false,
-			outline: 0,
-			borderColor: `${color.link} !important`,
-			boxShadow: [[0, 0, 0, 2, color.focus]],
-		},
-		...prismTheme({ color }),
-	},
-});
+const styles = ({ fontFamily, fontSize, color, borderRadius }: Rsg.Theme): Styles => { throw new Error("STUB"); };
 
 export interface EditorProps extends JssInjectedProps {
 	code: string;
@@ -57,24 +36,16 @@ export class Editor extends Component<EditorProps> {
 	public state = { code: this.props.code, prevCode: this.props.code };
 
 	public static getDerivedStateFromProps(nextProps: EditorProps, prevState: EditorState) {
-		const { code } = nextProps;
-		if (prevState.prevCode !== code) {
-			return {
-				prevCode: code,
-				code,
-			};
-		}
-		return null;
-	}
+        throw new Error("STUB");
+    }
 
 	public shouldComponentUpdate(nextProps: EditorProps, nextState: EditorState) {
-		return nextState.code !== this.state.code;
-	}
+        throw new Error("STUB");
+    }
 
 	private handleChange = (code: string) => {
-		this.setState({ code });
-		this.props.onChange(code);
-	};
+        throw new Error("STUB");
+    };
 
 	public render() {
 		return (

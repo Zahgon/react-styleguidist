@@ -8,8 +8,7 @@ import compose from 'jss-plugin-compose';
 import nonInheritedProps from './nonInheritedProps';
 
 const createGenerateId = () => {
-	let counter = 0;
-	return (rule: { key: string }) => `rsg--${rule.key}-${counter++}`;
+    throw new Error("STUB");
 };
 
 const jss = create({

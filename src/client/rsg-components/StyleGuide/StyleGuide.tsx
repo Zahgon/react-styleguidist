@@ -55,11 +55,8 @@ export default class StyleGuide extends Component<StyleGuideProps, StyleGuideSta
 	};
 
 	public componentDidCatch(error: Error, info: React.ErrorInfo) {
-		this.setState({
-			error,
-			info,
-		});
-	}
+        throw new Error("STUB");
+    }
 
 	public render() {
 		const { error, info }: StyleGuideState = this.state;

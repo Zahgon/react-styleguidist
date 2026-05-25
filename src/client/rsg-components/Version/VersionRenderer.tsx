@@ -3,26 +3,14 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-const styles = ({ color, fontFamily, fontSize }: Rsg.Theme) => ({
-	version: {
-		color: color.light,
-		margin: [[5, 0, 0, 0]],
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.base,
-		fontWeight: 'normal',
-	},
-});
+const styles = ({ color, fontFamily, fontSize }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface VersionProps extends JssInjectedProps {
 	children?: React.ReactNode;
 }
 
 export const VersionRenderer: React.FunctionComponent<VersionProps> = ({ classes, children }) => {
-	return (
-		<p aria-label="version" className={classes.version}>
-			{children}
-		</p>
-	);
+    throw new Error("STUB");
 };
 
 VersionRenderer.propTypes = {

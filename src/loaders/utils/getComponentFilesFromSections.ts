@@ -14,15 +14,5 @@ export default function getComponentFilesFromSections(
 	rootDir?: string,
 	ignore?: string[]
 ): string[] {
-	return sections.reduce((components: string[], section) => {
-		if (section.components) {
-			return components.concat(getComponentFiles(section.components, rootDir, ignore));
-		}
-
-		if (section.sections) {
-			return components.concat(getComponentFilesFromSections(section.sections, rootDir, ignore));
-		}
-
-		return components;
-	}, []);
+    throw new Error("STUB");
 }

@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const TableRowRenderer = ({ children }: Props) => {
-	return <tr>{children}</tr>;
+    throw new Error("STUB");
 };
 TableRowRenderer.propTypes = {
 	children: PropTypes.node.isRequired,

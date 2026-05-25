@@ -14,9 +14,7 @@ export interface UsageTabButtonProps {
 }
 
 const UsageTabButton = (props: UsageTabButtonProps) => {
-	const component = props.props;
-	const showButton = !isEmpty(component.props) || !isEmpty(component.methods);
-	return showButton ? <TabButton {...props}>Props & methods</TabButton> : null;
+    throw new Error("STUB");
 };
 
 UsageTabButton.propTypes = {

@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ color }: Rsg.Theme) => ({
-	thead: {
-		borderBottom: [[1, color.border, 'solid']],
-	},
-});
+const styles = ({ color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 interface TableHeadProps extends JssInjectedProps {
 	children: React.ReactNode;
@@ -17,7 +13,7 @@ export const TableHeadRenderer: React.FunctionComponent<TableHeadProps> = ({
 	classes,
 	children,
 }) => {
-	return <thead className={classes.thead}>{children}</thead>;
+    throw new Error("STUB");
 };
 
 TableHeadRenderer.propTypes = {

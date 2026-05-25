@@ -16,11 +16,7 @@ import { Details, DetailsSummary } from 'rsg-components/Markdown/Details';
 import { Table, TableHead, TableBody, TableRow, TableCell } from 'rsg-components/Markdown/Table';
 
 const Pre = (props: PreProps) => {
-	if (isValidElement(props.children)) {
-		// Avoid rendering <Code> inside <Pre>
-		return <PreBase {...props.children.props} />;
-	}
-	return <PreBase {...props} />;
+    throw new Error("STUB");
 };
 Pre.propTypes = {
 	children: PropTypes.node,
@@ -150,8 +146,7 @@ interface MarkdownProps {
 }
 
 export const Markdown: React.FunctionComponent<MarkdownProps> = ({ text, inline }) => {
-	const overrides = inline ? inlineOverrides : baseOverrides;
-	return compiler(stripHtmlComments(text), { overrides, forceBlock: true });
+    throw new Error("STUB");
 };
 
 Markdown.propTypes = {

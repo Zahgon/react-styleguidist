@@ -3,16 +3,10 @@ import PropTypes from 'prop-types';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../../typings';
 
-const styles = ({ space, color }: Rsg.Theme) => ({
-	hr: {
-		borderBottom: [[1, color.border, 'solid']],
-		marginTop: 0,
-		marginBottom: space[2],
-	},
-});
+const styles = ({ space, color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 export const HrRenderer: React.FunctionComponent<JssInjectedProps> = ({ classes }) => {
-	return <hr className={classes.hr} />;
+    throw new Error("STUB");
 };
 HrRenderer.propTypes = {
 	classes: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,

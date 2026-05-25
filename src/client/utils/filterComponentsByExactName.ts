@@ -11,5 +11,5 @@ export default function filterComponentsByExactName(
 	components: Rsg.Component[],
 	name: string
 ): Rsg.Component[] {
-	return components.filter(component => component.name === name);
+	return components.filter(component => { throw new Error("STUB"); });
 }

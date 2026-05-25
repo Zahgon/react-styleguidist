@@ -3,38 +3,7 @@ import cx from 'clsx';
 import Styled, { JssInjectedProps } from 'rsg-components/Styled';
 import * as Rsg from '../../../typings';
 
-export const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => ({
-	text: {
-		fontFamily: fontFamily.base,
-	},
-	inheritSize: {
-		fontSize: 'inherit',
-	},
-	smallSize: {
-		fontSize: fontSize.small,
-	},
-	baseSize: {
-		fontSize: fontSize.base,
-	},
-	textSize: {
-		fontSize: fontSize.text,
-	},
-	baseColor: {
-		color: color.base,
-	},
-	lightColor: {
-		color: color.light,
-	},
-	em: {
-		fontStyle: 'italic',
-	},
-	strong: {
-		fontWeight: 'bold',
-	},
-	isUnderlined: {
-		borderBottom: [[1, 'dotted', color.lightest]],
-	},
-});
+export const styles = ({ fontFamily, fontSize, color }: Rsg.Theme) => { throw new Error("STUB"); };
 
 export interface TextProps extends JssInjectedProps {
 	semantic?: 'em' | 'strong';
@@ -54,17 +23,7 @@ export const TextRenderer: React.FunctionComponent<TextProps> = ({
 	children,
 	...props
 }) => {
-	const Tag = semantic || 'span';
-	const classNames = cx(classes.text, classes[`${size}Size`], classes[`${color}Color`], {
-		[classes[Tag]]: !!semantic,
-		[classes.isUnderlined]: underlined,
-	});
-
-	return (
-		<Tag {...props} className={classNames}>
-			{children}
-		</Tag>
-	);
+    throw new Error("STUB");
 };
 
 export default Styled<TextProps>(styles)(TextRenderer);
